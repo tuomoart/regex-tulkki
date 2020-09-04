@@ -5,3 +5,6 @@ Tietorakenteiden ja algoritmien harjoitustyönä tehty säännöllisten lausekke
 
 ### Dokumentaatio
 [Määrittelydokumentti](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Maarittelydokumentti.md)
+
+#### Viikkoraportit
+[Viikko 1](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Viikkoraportti%201.md)
