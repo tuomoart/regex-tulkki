@@ -4,4 +4,4 @@ Haastavaa oli pystyä vastaamaan kaikkiin annettuihin kohtiin esimierkiksi mää
 
 Seuraavana aloitan perehtymisen säännöllisiin lausekkeisiin sekä kokeilen rakentaa jonkinlaisen "proof-of-concept" -version, jolla näin millainen lähestymistapa tällaiseen ohjelmaan voisi olla paras. Perehtymisen jälkeen pitää miettiä, kuinka laaja tulkki on suunnitlemana rakentaa. Aion myös tehdä heti alkuun valmiiksi työkalun syötteen tiedostosta lukemiseen, jotta testaaminen ohjelmoidessa on helppoa.
 
-Tällä viikolla aikaa kului noin 2 tuntia.
+Tällä viikolla aikaa kului noin 3 tuntia.
