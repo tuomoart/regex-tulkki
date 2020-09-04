@@ -4,4 +4,4 @@
 Tietorakenteiden ja algoritmien harjoitustyönä tehty säännöllisten lausekkeiden tulkkausohjelma.
 
 ### Dokumentaatio
-[Määrittelydokumentti]()
+[Määrittelydokumentti](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Maarittelydokumentti.md)
