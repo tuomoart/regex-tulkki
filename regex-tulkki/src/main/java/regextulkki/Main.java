@@ -10,33 +10,48 @@ package regextulkki;
  * @author tuomoart
  */
 public class Main {
+
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-        String syote = "aaaaaaaaaa";
-        String lauseke = "a*";
+        String syote = "aaabbbbcccc";
+        String lauseke = "a*b*c*";
         
         char[] syoteChars = syote.toCharArray();
         char[] lausekeChars = lauseke.toCharArray();
         
         boolean kuuluu = true;
         int syoteOffset = 0;
+        int lausekeOffset = 0;
         
-        for (int i = 0; i<lausekeChars.length && i+syoteOffset<syoteChars.length; i++) {
-            if (lausekeChars[i]=='*') {
-                while (i+syoteOffset<syoteChars.length && syoteChars[i+syoteOffset]==lausekeChars[i-1]) {
-                    syoteOffset++;
+        int lausekeI = 0;
+        int syoteI = 0;
+        
+        while (lausekeI<lausekeChars.length && syoteI<syoteChars.length) {
+            if (lausekeChars[lausekeI]=='*') {
+                while (syoteI<syoteChars.length && syoteChars[syoteI]==lausekeChars[lausekeI-1]) {
+                    syoteI++;
                 }
+                lausekeI++;
+                continue;
             }
             
-            if (i+syoteOffset >= syoteChars.length) {
-                break;
-            }
-            
-            if (syoteChars[i+syoteOffset]!=lausekeChars[i]) {
+            if (syoteChars[syoteI]!=lausekeChars[lausekeI]) {
                 kuuluu = false;
                 break;
             }
+            
+            lausekeI++;
+            syoteI++;
         }
         
+        //Jos jompaa kumpaa ei käyty loppuun, erityisesti syötettä niin ei täsmännyt. Kuitenkin jos viimeinen 
+        if (syoteI<syoteChars.length || (lausekeI<lausekeChars.length && lausekeChars[lausekeChars.length-1]!='*')) {
+            kuuluu = false;
+        }
+
         System.out.println(kuuluu);
     }
 }
