@@ -23,8 +23,6 @@ public class Main {
         char[] lausekeChars = lauseke.toCharArray();
         
         boolean kuuluu = true;
-        int syoteOffset = 0;
-        int lausekeOffset = 0;
         
         int lausekeI = 0;
         int syoteI = 0;
@@ -47,7 +45,7 @@ public class Main {
             syoteI++;
         }
         
-        //Jos jompaa kumpaa ei käyty loppuun, erityisesti syötettä niin ei täsmännyt. Kuitenkin jos viimeinen 
+        //Jos jompaa kumpaa ei käyty loppuun, erityisesti syötettä niin ei täsmännyt, paitsi jos lauseke loppui kesken mutta viimeinen merkki oli operaattori
         if (syoteI<syoteChars.length || (lausekeI<lausekeChars.length && lausekeChars[lausekeChars.length-1]!='*')) {
             kuuluu = false;
         }
