@@ -4,4 +4,4 @@ Checkstyle, testaus, testikattavuus ja JavaDoc konfiguroitu valmiiksi.
 
 Ensimmäisten viikkojen ajan aika on ollut tiukilla, mutta jatkossa muun ohjelman pitäisi vähentyä aika reilusti.
 
-Tällä viikolla aikaa kului (oli käytettävissä) 5 tuntia.
+Tällä viikolla aikaa kului (oli käytettävissä) 6 tuntia.
