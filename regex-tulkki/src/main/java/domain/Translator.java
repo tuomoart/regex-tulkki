@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import java.util.Arrays;
@@ -16,7 +11,7 @@ public class Translator {
         char[] syoteChars = s.toCharArray();
         char[] lausekeChars = l.toCharArray();
         
-        boolean kuuluu = tarkasta(syoteChars, lausekeChars, (char) 127);
+        boolean kuuluu = tarkasta(syoteChars, lausekeChars, (char) 7, (char) 127);
         
 //        int lausekeI = 0;
 //        int syoteI = 0;
@@ -53,15 +48,18 @@ public class Translator {
         return kuuluu;
     }
     
-    private boolean tarkasta(char[] syote, char[] lauseke, char viime) {
+    private boolean tarkasta(char[] syote, char[] lauseke, char viimeS, char viimeL) {
         
         System.out.println(Arrays.toString(syote));
         System.out.println(Arrays.toString(lauseke));
-        System.out.println("viime: " + viime);
+        System.out.println("viimeL: " + viimeL);
+        System.out.println("viimeS: " + viimeS);
         System.out.println("");
         
         if (syote.length == 0) {
             if (lauseke.length == 0) {
+                return true;
+            }else if (lauseke[0] == '+') {
                 return true;
             } else if (lauseke.length == 2 && lauseke[1]== '*') {
                 return true;
@@ -73,15 +71,22 @@ public class Translator {
         } else if (lauseke.length == 0) {
             return false;
         } else if (syote[0] == lauseke[0]) {
-            return tarkasta(poista1(syote), poista1(lauseke), lauseke[0]);
+            return tarkasta(poista1(syote), poista1(lauseke), syote[0], lauseke[0]);
         } else if (lauseke[0] == '*') {
-            if (syote [0] != viime) {
-                return tarkasta(syote, poista1(lauseke), lauseke[0]);
+            if (syote [0] != viimeL) {
+                return tarkasta(syote, poista1(lauseke), syote[0], lauseke[0]);
             } else {
-                return tarkasta(poista1(syote), lauseke, viime);
+                return tarkasta(poista1(syote), lauseke, syote[0], viimeL);
+            }
+        } else if (lauseke[0] == '+') {
+            if (viimeS != viimeL) {
+                return tarkasta(syote, poista1(lauseke), syote[0], lauseke[0]);
+            } else {
+                System.out.println("lol");
+                return tarkasta(poista1(syote), lauseke, syote[0], viimeL);
             }
         } else if (lauseke.length>1 && lauseke[1] == '*') {
-            return tarkasta(syote, poista(lauseke, 2), lauseke[1]);
+            return tarkasta(syote, poista(lauseke, 2), syote[0], lauseke[1]);
         }
         
         return false;

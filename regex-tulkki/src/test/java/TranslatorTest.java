@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -38,12 +32,6 @@ public class TranslatorTest {
     @After
     public void tearDown() {
     }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
     
     @Test
     public void singleCharacterTest1() {
@@ -95,4 +83,38 @@ public class TranslatorTest {
         assertEquals(true, t.matches("aaabbc", "a*b*c"));
     }
     
+    @Test
+    public void plusTest1() {
+        assertEquals(true, t.matches("a", "a+"));
+    }
+    
+    @Test
+    public void plusTest2() {
+        assertEquals(true, t.matches("aaa", "a+"));
+    }
+    
+    @Test
+    public void plusTest3() {
+        assertEquals(false, t.matches("b", "a+"));
+    }
+    
+    @Test
+    public void plusTest4() {
+        assertEquals(true, t.matches("aaabbb", "a+b+"));
+    }
+    
+    @Test
+    public void plusAndRepetitionTest1() {
+        assertEquals(true, t.matches("aaabbb", "a+b*"));
+    }
+    
+    @Test
+    public void plusAndRepetitionTest2() {
+        assertEquals(true, t.matches("aaa", "a+b*"));
+    }
+    
+    @Test
+    public void plusAndRepetitionTest3() {
+        assertEquals(true, t.matches("aaabbbc", "a+b*c+"));
+    }
 }
