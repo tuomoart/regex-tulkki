@@ -8,4 +8,5 @@ Tietorakenteiden ja algoritmien harjoitustyönä tehty säännöllisten lausekke
 
 #### Viikkoraportit
 [Viikko 1](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Viikkoraportti%201.md)
+
 [Viikko 2](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Viikkoraportti%202.md)
