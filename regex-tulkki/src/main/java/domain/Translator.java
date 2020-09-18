@@ -17,7 +17,7 @@ public class Translator {
         char[] syoteChars = s.toCharArray();
         char[] lausekeChars = l.toCharArray();
         
-        boolean kuuluu = tarkasta(syoteChars, lausekeChars, (char) 7, (char) 127);
+        boolean kuuluu = tarkasta(syoteChars, lausekeChars, new char[] {(char) 7}, new char[] {(char) 127});
         
 //        int lausekeI = 0;
 //        int syoteI = 0;
@@ -54,12 +54,12 @@ public class Translator {
         return kuuluu;
     }
     
-    private boolean tarkasta(char[] syote, char[] lauseke, char viimeS, char viimeL) {
+    private boolean tarkasta(char[] syote, char[] lauseke, char[] viimeS, char[] viimeL) {
         
         System.out.println(Arrays.toString(syote));
         System.out.println(Arrays.toString(lauseke));
-        System.out.println("viimeL: " + viimeL);
-        System.out.println("viimeS: " + viimeS);
+        System.out.println("viimeL: " + Arrays.toString(viimeL));
+        System.out.println("viimeS: " + Arrays.toString(viimeS));
         System.out.println("");
         
         if (syote.length == 0) {
@@ -77,21 +77,21 @@ public class Translator {
         } else if (lauseke.length == 0) {
             return false;
         } else if (syote[0] == lauseke[0]) {
-            return tarkasta(poista1(syote), poista1(lauseke), syote[0], lauseke[0]);
+            return tarkasta(poista1(syote), poista1(lauseke), new char[] {syote[0]}, new char[] {lauseke[0]});
         } else if (lauseke[0] == '*') {
-            if (syote [0] != viimeL) {
-                return tarkasta(syote, poista1(lauseke), syote[0], lauseke[0]);
+            if (syote [0] != viimeL[0]) {
+                return tarkasta(syote, poista1(lauseke), new char[] {syote[0]}, new char[] {lauseke[0]});
             } else {
-                return tarkasta(poista1(syote), lauseke, syote[0], viimeL);
+                return tarkasta(poista1(syote), lauseke, new char[] {syote[0]}, viimeL);
             }
         } else if (lauseke[0] == '+') {
-            if (viimeS != viimeL) {
-                return tarkasta(syote, poista1(lauseke), syote[0], lauseke[0]);
+            if (!Arrays.equals(viimeS, viimeL)) {
+                return tarkasta(syote, poista1(lauseke), new char[] {syote[0]}, new char[] {lauseke[0]});
             } else {
-                return tarkasta(poista1(syote), lauseke, syote[0], viimeL);
+                return tarkasta(poista1(syote), lauseke, new char[] {syote[0]}, viimeL);
             }
         } else if (lauseke.length>1 && lauseke[1] == '*') {
-            return tarkasta(syote, poista(lauseke, 2), syote[0], lauseke[1]);
+            return tarkasta(syote, poista(lauseke, 2), new char[] {syote[0]}, new char[] {lauseke[1]});
         }
         
         return false;
