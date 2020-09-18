@@ -7,6 +7,12 @@ import java.util.Arrays;
  * @author tuomoart
  */
 public class Translator {
+    /**
+     * Tarkasta, täsmääkö syöte annettuun säännölliseen lausekkeeseen
+     * @param s Tutkittava syöte
+     * @param l Säännöllinen lauseke jota vastaan syötettä tutkitaan
+     * @return boolean
+     */
     public boolean matches(String s, String l) {
         char[] syoteChars = s.toCharArray();
         char[] lausekeChars = l.toCharArray();
@@ -82,7 +88,6 @@ public class Translator {
             if (viimeS != viimeL) {
                 return tarkasta(syote, poista1(lauseke), syote[0], lauseke[0]);
             } else {
-                System.out.println("lol");
                 return tarkasta(poista1(syote), lauseke, syote[0], viimeL);
             }
         } else if (lauseke.length>1 && lauseke[1] == '*') {
