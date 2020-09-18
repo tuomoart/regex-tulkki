@@ -10,4 +10,4 @@ Haarautumakattavuuden muutama puuttuva prosentti johtuvat sellaisista rajatapauk
 
 Checkstylen mukaan tarkastettu koodin formaatti kuntoon. Ainut herja on tuon tärkeimmän logiikkametodini Translator.tarkasta pituus, mutta en aio ryhtyä pilkkomaan sitä ihan vielä. Logiikan rakentaminen on sen verran pahasti kesken. Pitääpä myös vaihtaa tuon luokan nimi suomeksi.
 
-Tällä viikolla käytin aikaa 10 tuntia
+Tällä viikolla käytin aikaa 10 tuntia.
