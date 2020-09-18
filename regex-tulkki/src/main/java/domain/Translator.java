@@ -65,9 +65,9 @@ public class Translator {
         if (syote.length == 0) {
             if (lauseke.length == 0) {
                 return true;
-            }else if (lauseke[0] == '+') {
+            } else if (lauseke[0] == '+') {
                 return true;
-            } else if (lauseke.length == 2 && lauseke[1]== '*') {
+            } else if (lauseke.length == 2 && lauseke[1] == '*') {
                 return true;
             } else if (lauseke.length == 1 && lauseke[0] == '*') {
                 return true;
@@ -90,7 +90,7 @@ public class Translator {
             } else {
                 return tarkasta(poista1(syote), lauseke, new char[] {syote[0]}, viimeL);
             }
-        } else if (lauseke.length>1 && lauseke[1] == '*') {
+        } else if (lauseke.length > 1 && lauseke[1] == '*') {
             return tarkasta(syote, poista(lauseke, 2), new char[] {syote[0]}, new char[] {lauseke[1]});
         }
         
@@ -102,10 +102,10 @@ public class Translator {
     }
     
     private char[] poista(char[] c, int m) {
-        char[] r = new char[c.length-m];
+        char[] r = new char[c.length - m];
         
-        for (int i = m; i<c.length; i++) {
-            r[i-m] = c[i];
+        for (int i = m; i < c.length; i++) {
+            r[i - m] = c[i];
         }
         
         return r;
