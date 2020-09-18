@@ -9,3 +9,5 @@ Ohjelma on nyt rakenteeltaan sellainen, että sitä on helppo testata. Sen lisä
 Haarautumakattavuuden muutama puuttuva prosentti johtuvat sellaisista rajatapauksista, joille en äkkiä keksinyt hyvää testiä. Tarkoituksenani on saada lopulliseen työhön aidosti kaikenkattava testaus.
 
 Checkstylen mukaan tarkastettu koodin formaatti kuntoon. Ainut herja on tuon tärkeimmän logiikkametodini Translator.tarkasta pituus, mutta en aio ryhtyä pilkkomaan sitä ihan vielä. Logiikan rakentaminen on sen verran pahasti kesken. Pitääpä myös vaihtaa tuon luokan nimi suomeksi.
+
+Tällä viikolla käytin aikaa 10 tuntia
