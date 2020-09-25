@@ -79,4 +79,33 @@ public class MerkkijonoTest {
         assertEquals('b', m.get(1));
         assertEquals('c', m.get(2));
     }
+    
+    @Test
+    public void kopioiTest() {
+        Merkkijono m = new Merkkijono("abc");
+        m.kopioi(2);
+        assertEquals(5, m.getAll().length);
+    }
+    
+    @Test
+    public void equalsTest() {
+        Merkkijono m1 = new Merkkijono("abc");
+        Merkkijono m2 = new Merkkijono("abc");
+        Merkkijono m3 = new Merkkijono("uio");
+        String s = "abc";
+        
+        assertEquals(true, m1.equals(m1));
+        assertEquals(true, m1.equals(m2));
+        assertEquals(false, m1.equals(m3));
+        assertEquals(false, m1.equals(s));
+        assertEquals(false, m1.equals(null));
+    }
+    
+    @Test
+    public void hashCodeTest() {
+        //Tätä ei tarvita mihinkään mutta testataan jottei näy rumasti testikattavuusraportissa.
+        Merkkijono m = new Merkkijono("");
+        
+        assertEquals(7, m.hashCode());
+    }
 }
