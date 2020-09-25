@@ -7,6 +7,10 @@ Tietorakenteiden ja algoritmien harjoitustyönä tehty säännöllisten lausekke
 ### Dokumentaatio
 [Määrittelydokumentti](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Maarittelydokumentti.md)
 
+[Toteutusdokumentti](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Toteutusdokumentti.md)
+
+[Testausdokumentti](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Testausdokumentti.md)
+
 
 #### Viikkoraportit
 [Viikko 1](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Viikkoraportti%201.md)
