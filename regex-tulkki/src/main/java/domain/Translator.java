@@ -56,6 +56,7 @@ public class Translator {
     
     private boolean tarkasta(char[] syote, char[] lauseke, char[] viimeS, char[] viimeL) {
         
+        //Diagnostiikkaa varten printtejä
         System.out.println(Arrays.toString(syote));
         System.out.println(Arrays.toString(lauseke));
         System.out.println("viimeL: " + Arrays.toString(viimeL));

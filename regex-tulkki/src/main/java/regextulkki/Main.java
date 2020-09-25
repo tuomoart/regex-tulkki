@@ -12,8 +12,8 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        String syote = "aa";
-        String lauseke = "a+";
+        String syote = "aaa";
+        String lauseke = "(a)+";
         
         Translator tulkki = new Translator();
         
