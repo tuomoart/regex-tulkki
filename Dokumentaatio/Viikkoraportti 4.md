@@ -4,7 +4,7 @@ Nyt kun kertailen mielessäni Hannun suuntaviivoja rekursiiviseen toteutukseen, 
 
 Ohjelmani ei käytä monimutkaisia tietorakenteita, mutta merkkijonoa varten olen nyt luonut oman rakenteen, lähinnä jotta voin täysin itse määrittää sen toiminnan ja tarpeelliset metodit. Myös tämä luokka on testattu perin pohjin ja testikattavuus näyttää seuraavalta:
 
-
+![](https://raw.githubusercontent.com/tuomoart/regex-tulkki/master/Dokumentaatio/Misc/Testikattavuus_vk4.png)
 
 Testikattavuus on siis hyvällä tasolla.
 
