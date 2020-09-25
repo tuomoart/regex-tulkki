@@ -34,7 +34,7 @@ public class Merkkijono {
     public void lisaa(char m) {
         kopioiVoid(1);
         
-        merkit[merkit.length-1] = m;
+        merkit[merkit.length - 1] = m;
     }
     
     public char[] kopioi(int pidempi) {
@@ -54,7 +54,7 @@ public class Merkkijono {
     }
     
     public char[] poista(int maara) {
-        char[] temp = new char[merkit.length-maara];
+        char[] temp = new char[merkit.length - maara];
         
         for (int i = maara; i < merkit.length; i++) {
             temp[i - maara] = merkit[i];
@@ -110,7 +110,7 @@ public class Merkkijono {
         String s = "";
         
         for (char c: merkit) {
-            s = s+c;
+            s = s + c;
         }
         
         return s;
