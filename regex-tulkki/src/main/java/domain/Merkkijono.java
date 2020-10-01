@@ -14,6 +14,10 @@ import java.util.Arrays;
 public class Merkkijono {
     private char[] merkit;
     
+    public Merkkijono() {
+        this.merkit = new char[0];
+    }
+    
     public Merkkijono(char[] merkit) {
         this.merkit = merkit;
     }
@@ -37,10 +41,31 @@ public class Merkkijono {
         merkit[merkit.length - 1] = m;
     }
     
+    public Merkkijono lisaaAlkuun(Merkkijono m) {
+        for (char c: merkit) {
+            m.lisaa(c);
+        }
+        
+        return m;
+    }
+    
+    public void lisaaAlkuun(char c) {
+        this.merkit = this.lisaaAlkuun(new Merkkijono(c)).getAll();
+    }
+    
     public char[] kopioi(int pidempi) {
         kopioiVoid(pidempi);
         
         return merkit;
+    }
+    
+    public Merkkijono kopioi() {
+        char[] temp = new char[merkit.length];
+        
+        for (int i = 0; i < merkit.length; i++) {
+            temp[i] = merkit[i];
+        }
+        return new Merkkijono(temp);
     }
     
     public void kopioiVoid(int pidempi) {
@@ -79,6 +104,30 @@ public class Merkkijono {
     
     public int length() {
         return this.merkit.length;
+    }
+    
+    public boolean tasmaa(Merkkijono verrattava) {
+        for (int i = 0; i<verrattava.length(); i++) {
+            if (this.get(i) != verrattava.get(i)) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    public void toista(int kertoja) {
+        char[] temp = new char[merkit.length];
+        
+        for (int i = 0; i < merkit.length; i++) {
+            temp[i] = merkit[i];
+        }
+        
+        for (int i=0; i < kertoja; i++) {
+            for (char c : temp) {
+                this.lisaa(c);
+            }
+        }
     }
 
     @Override
