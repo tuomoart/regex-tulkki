@@ -85,6 +85,9 @@ public class Translator {
         } else if (lauseke.length() == 0) {
             return false;
         } else if (syote.get(0) == lauseke.get(0)) {
+            if (lauseke.equals(viimeL) && lauseke.get(lauseke.length()-1) == '*') {
+                return true;
+            }
             viimeS = new Merkkijono(syote.get(0));
             viimeL = new Merkkijono(lauseke.get(0));
             syote.poista1();
@@ -142,7 +145,9 @@ public class Translator {
             }
             
             if (lauseke.length() > 0 && lauseke.get(pituus) == '*') {
-                return tarkasta(syote, lauseke.lisaaAlkuun(mKoko), viimeS, new Merkkijono('*'));
+                viimeL = mKoko.kloonaa();
+                viimeL.lisaa('*');
+                return tarkasta(syote, lauseke.lisaaAlkuun(mKoko), viimeS, viimeL);
             } else {
                 lauseke.poista(pituus);
                 

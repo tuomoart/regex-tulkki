@@ -129,6 +129,16 @@ public class Merkkijono {
             }
         }
     }
+    
+    public Merkkijono kloonaa() {
+        char[] temp = new char[merkit.length];
+        
+        for (int i = 0; i < merkit.length; i++) {
+            temp[i] = merkit[i];
+        }
+        
+        return new Merkkijono(temp);
+    }
 
     @Override
     public int hashCode() {
