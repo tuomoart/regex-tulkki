@@ -117,4 +117,27 @@ public class TranslatorTest {
     public void plusAndRepetitionTest3() {
         assertEquals(true, t.matches("aaabbbc", "a+b*c+"));
     }
+    
+    @Test
+    public void parenthesisTest1() {
+        assertEquals(true, t.matches("a", "(a|b)"));
+    }
+    
+    @Test
+    public void parenthesisTest2() {
+        assertEquals(true, t.matches("c", "(a|b|c)"));
+    }
+    
+    @Test
+    public void parenthesisTest3() {
+        assertEquals(true, t.matches("aa", "(aa)*"));
+        assertEquals(true, t.matches("aaaa", "(aa)*"));
+    }
+    
+    @Test
+    public void parenthesisTest4() {
+        assertEquals(true, t.matches("ab", "(ab)*"));
+        assertEquals(true, t.matches("abab", "(ab)*"));
+        assertEquals(false, t.matches("abc", "(ab)*"));
+    }
 }

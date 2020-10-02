@@ -103,6 +103,7 @@ public class Translator {
                 syote.poista1();
                 return tarkasta(syote, lauseke, viimeS, viimeL);
             }
+        //TODO +-operaattorin joutaisi poistaa kun sulut ei tue sitä
         } else if (lauseke.get(0) == '+') {
             if (!viimeS.equals(viimeL)) {
                 viimeS = new Merkkijono(syote.get(0));
@@ -130,6 +131,7 @@ public class Translator {
             
             for (int i=1; i<lauseke.length(); i++) {
                 mKoko.lisaa(lauseke.get(i));
+                //TODO sulkujen luku pitäisi muokata sellaiseksi että myös useammat sisäkkäin toimii
                 if (lauseke.get(i)==')') {
                     sisalto.add(m);
                     pituus = i+1;
@@ -143,7 +145,7 @@ public class Translator {
                 m.lisaa(lauseke.get(i));
             }
             
-            if (lauseke.length() > 0 && lauseke.get(pituus) == '*') {
+            if (lauseke.length() > pituus && lauseke.get(pituus) == '*') {
                 return tarkasta(syote, lauseke.lisaaAlkuun(mKoko), viimeS, viimeL);
             } else {
                 lauseke.poista(pituus);
@@ -154,9 +156,9 @@ public class Translator {
                     }
                 }
                 
-                System.out.println(lauseke.toString());
             }
-            return tarkasta(syote, lauseke, viimeS, viimeL);
+            System.out.println(lauseke);
+            return tarkasta(syote, new Merkkijono(lauseke.poista(pituus)), viimeS, viimeL);
         }
         
         return false;
