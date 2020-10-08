@@ -101,8 +101,20 @@ public class TranslatorTest {
     
     @Test
     public void parenthesisTest4() {
+        assertEquals(false, t.matches("aaa", "(aa)*"));
+    }
+    
+    @Test
+    public void parenthesisTest5() {
         assertEquals(true, t.matches("ab", "(ab)*"));
         assertEquals(true, t.matches("abab", "(ab)*"));
         assertEquals(false, t.matches("abc", "(ab)*"));
     }
+    
+    @Test
+    public void parenthesisTest6() {
+        assertEquals(true, t.matches("acccaabbba", "(a(c|b)*a)*"));
+    }
+    
+    
 }

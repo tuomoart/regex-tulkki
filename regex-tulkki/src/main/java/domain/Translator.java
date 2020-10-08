@@ -25,9 +25,9 @@ public class Translator {
     private boolean tarkasta(Merkkijono syote, Merkkijono lauseke) {
         
         //Diagnostiikkaa varten printtejä
-//        System.out.println("syote: " + syote.toString());
-//        System.out.println("lauseke: " + lauseke.toString());
-//        System.out.println("");
+        System.out.println("syote: " + syote.toString());
+        System.out.println("lauseke: " + lauseke.toString());
+        System.out.println("");
         
         //Jos molemmat ovat loppuneet, syöte täsmää
         if (syote.length() == 0 && lauseke.length() == 0) {
@@ -75,13 +75,18 @@ public class Translator {
         //Kun ei ole toistoa, käsitellään seuraavien sulkujen sisältö seuraavana:
         ArrayList<Merkkijono> vaihtoehdot = new ArrayList();
         Merkkijono temp = new Merkkijono();
+        int sulkuja = 0;
         
         //Käydään sulkulause läpi ja paloitellaan se erillisiin osiin:
         for (int i = 1; i< seuraava.length()-1; i++) {
             char c = seuraava.get(i);
             
-            //Tai-merkin kohdalla aloitetaan uusi osa
-            if (c == '|') {
+            //Seurataan sulkuja
+            if (c == '(') {sulkuja++;}
+            if (c == ')') {sulkuja--;}
+            
+            //Tai-merkin kohdalla aloitetaan uusi osa jos se ei ole avointen sulkujen sisällä
+            if (c == '|' && sulkuja == 0) {
                 vaihtoehdot.add(temp);
                 temp = new Merkkijono();
                 continue;
@@ -96,7 +101,7 @@ public class Translator {
         
         //Kokeillaan vaihtoehdot vuorotellen
         for (Merkkijono vaihtoehto: vaihtoehdot) {
-            lauseke = lauseke.lisaaAlkuun(vaihtoehto);
+            lauseke.lisaaAlkuun(vaihtoehto.kloonaa());
             
             //Jos jokin vaihtoehto toimii, palauta true
             if (tarkasta(syote.kloonaa(), lauseke.kloonaa())) {
@@ -112,7 +117,7 @@ public class Translator {
         
     }
     
-    public Merkkijono lisaaSulut(Merkkijono m) {
+    private Merkkijono lisaaSulut(Merkkijono m) {
         Merkkijono temp = new Merkkijono();
         
         for (char c: m.getAll()) {
@@ -149,109 +154,6 @@ public class Translator {
         
         return temp;
     }
-    
-//    private boolean tarkasta(Merkkijono syote, Merkkijono lauseke, Merkkijono viimeS, Merkkijono viimeL) {
-//        
-//        //Diagnostiikkaa varten printtejä
-//        System.out.println("Syöte: " + syote.toString());
-//        System.out.println("Lauseke: " + lauseke.toString());
-//        System.out.println("viimeL: " + viimeL.toString());
-//        System.out.println("viimeS: " + viimeS.toString());
-//        System.out.println("");
-//        
-//        if (syote.length() == 0) {
-//            if (lauseke.length() == 0) {
-//                return true;
-//            } else if (lauseke.get(0) == '+') {
-//                return true;
-//            } else if (lauseke.length() == 2 && lauseke.get(1) == '*') {
-//                return true;
-//            } else if (lauseke.length() == 1 && lauseke.get(0) == '*') {
-//                return true;
-//            } else if(lauseke.get(lauseke.length()-1)=='*') {
-//                return true;
-//            } else {
-//                return false;
-//            }
-//        } else if (lauseke.length() == 0) {
-//            return false;
-//        } else if (syote.get(0) == lauseke.get(0)) {
-//            viimeS = new Merkkijono(syote.get(0));
-//            viimeL = new Merkkijono(lauseke.get(0));
-//            syote.poista1();
-//            lauseke.poista1();
-//            return tarkasta(syote, lauseke, viimeS, viimeL);
-//        } else if (lauseke.get(0) == '*') {
-//            if (syote.get(0) != viimeL.get(0)) {
-//                viimeS = new Merkkijono(syote.get(0));
-//                viimeL = new Merkkijono(lauseke.get(0));
-//                lauseke.poista1();
-//                return tarkasta(syote, lauseke, viimeS, viimeL);
-//            } else {
-//                viimeS = new Merkkijono(syote.get(0));
-//                syote.poista1();
-//                return tarkasta(syote, lauseke, viimeS, viimeL);
-//            }
-//        //TODO +-operaattorin joutaisi poistaa kun sulut ei tue sitä
-//        } else if (lauseke.get(0) == '+') {
-//            if (!viimeS.equals(viimeL)) {
-//                viimeS = new Merkkijono(syote.get(0));
-//                viimeL = new Merkkijono(lauseke.get(0));
-//                lauseke.poista1();
-//                return tarkasta(syote, lauseke, viimeS, viimeL);
-//            } else {
-//                viimeS = new Merkkijono(syote.get(0));
-//                syote.poista1();
-//                return tarkasta(syote, lauseke, viimeS, viimeL);
-//            }
-//        } else if (lauseke.length() > 1 && lauseke.get(1) == '*') {
-//            viimeS = new Merkkijono(syote.get(0));
-//            viimeL = new Merkkijono(lauseke.get(1));
-//            lauseke.poista(2);
-//            return tarkasta(syote, lauseke, viimeS, viimeL);
-//        } else if (lauseke.get(0) == '(') {
-//            ArrayList<Merkkijono> sisalto = new ArrayList();
-//            
-//            Merkkijono m = new Merkkijono();
-//            Merkkijono mKoko = new Merkkijono('(');
-//            
-//            int pituus = 0;
-//            boolean tai = false;
-//            
-//            for (int i=1; i<lauseke.length(); i++) {
-//                mKoko.lisaa(lauseke.get(i));
-//                //TODO sulkujen luku pitäisi muokata sellaiseksi että myös useammat sisäkkäin toimii
-//                if (lauseke.get(i)==')') {
-//                    sisalto.add(m);
-//                    pituus = i+1;
-//                    break;
-//                } else if (lauseke.get(i) == '|') {
-//                    sisalto.add(m);
-//                    m = new Merkkijono();
-//                    tai = true;
-//                    continue;
-//                }
-//                m.lisaa(lauseke.get(i));
-//            }
-//            
-//            if (lauseke.length() > pituus && lauseke.get(pituus) == '*') {
-//                return tarkasta(syote, lauseke.lisaaAlkuun(mKoko), viimeS, viimeL);
-//            } else {
-//                lauseke.poista(pituus);
-//                
-//                for (Merkkijono mJono: sisalto) {
-//                    if (tarkasta(syote, lauseke.lisaaAlkuun(mJono), viimeS, viimeL)) {
-//                        return true;
-//                    }
-//                }
-//                
-//            }
-//            System.out.println(lauseke);
-//            return tarkasta(syote, new Merkkijono(lauseke.poista(pituus)), viimeS, viimeL);
-//        }
-//        
-//        return false;
-//    }
     
     private boolean onErikoismerkki(char c) {
         return c == '*' || c == '|' || c == '(' || c == ')';

@@ -50,23 +50,10 @@ public class Merkkijono {
         return m;
     }
     
-    public void lisaaAlkuun(char c) {
-        this.merkit = this.lisaaAlkuun(new Merkkijono(c)).getAll();
-    }
-    
     public char[] kopioi(int pidempi) {
         kopioiVoid(pidempi);
         
         return merkit;
-    }
-    
-    public Merkkijono kopioi() {
-        char[] temp = new char[merkit.length];
-        
-        for (int i = 0; i < merkit.length; i++) {
-            temp[i] = merkit[i];
-        }
-        return new Merkkijono(temp);
     }
     
     public void kopioiVoid(int pidempi) {
@@ -99,40 +86,12 @@ public class Merkkijono {
         return merkit[indeksi];
     }
     
-    public char getLast() {
-        return this.get(this.length()-1);
-    }
-    
     public char[] getAll() {
         return merkit;
     }
     
     public int length() {
         return this.merkit.length;
-    }
-    
-    public boolean tasmaa(Merkkijono verrattava) {
-        for (int i = 0; i<verrattava.length(); i++) {
-            if (this.get(i) != verrattava.get(i)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    public void toista(int kertoja) {
-        char[] temp = new char[merkit.length];
-        
-        for (int i = 0; i < merkit.length; i++) {
-            temp[i] = merkit[i];
-        }
-        
-        for (int i=0; i < kertoja; i++) {
-            for (char c : temp) {
-                this.lisaa(c);
-            }
-        }
     }
     
     public Merkkijono kloonaa() {
