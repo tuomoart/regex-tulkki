@@ -27,7 +27,6 @@ public class Merkkijono {
         
         for (char c: merkit.toCharArray()) {
             lisaa(c);
-            System.out.println(Arrays.toString(this.merkit));
         }
     }
     
@@ -45,6 +44,8 @@ public class Merkkijono {
         for (char c: merkit) {
             m.lisaa(c);
         }
+        
+        merkit = m.getAll();
         
         return m;
     }
@@ -96,6 +97,10 @@ public class Merkkijono {
     
     public char get(int indeksi) {
         return merkit[indeksi];
+    }
+    
+    public char getLast() {
+        return this.get(this.length()-1);
     }
     
     public char[] getAll() {

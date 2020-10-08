@@ -13,8 +13,8 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        String syote = "c";
-        String lauseke = "(a|b)";
+        String syote = "ccc";
+        String lauseke = "a*b*c*";
         
         Translator tulkki = new Translator();
         
