@@ -22,3 +22,5 @@ Tietorakenteiden ja algoritmien harjoitustyönä tehty säännöllisten lausekke
 [Viikko 4](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Viikkoraportti%204.md)
 
 [Viikko 5](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Viikkoraportti%205.md)
+
+[Viikko 6](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Viikkoraportti%206.md)
