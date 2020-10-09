@@ -6,4 +6,6 @@ Komentorivikäyttöliittymä lisätty. Käyttöliittymäkoodi käyttää valmiit
 
 Lista-tietorakenne pitää vielä toteuttaa itse, mutta siinä ei pitäisi olla mitään monimutkaista. Merkkijono-tietorakennetta pitää hieman hioa, siellä tehdään nyt monta asiaa aika tyhmästi.
 
+Ennen lopullista palautusta teen vielä dokumentaation loppuun. Testausta aion suorittaa ainakin siten, että vertailen omaa toteutustani Javan valmiiseen regex-tarkastajaan.
+
 Aikaa kului tällä viikolla 10 tuntia.
