@@ -24,7 +24,7 @@ public class Testaaja {
     public Testaaja(Translator t) {
         tulkki = t;
         testit = new ArrayList();
-        testit.add("(a|b|c|)*");
+        testit.add("(a|b|c)*");
         testit.add("(a|b|c|d|e|f|g|h|i|j|k|l|m|n)*");
     }
     
