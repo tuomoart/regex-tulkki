@@ -112,7 +112,7 @@ public class Translator {
             lauseke.poista(vaihtoehto.length());
         }
         
-        //Jos yksikään vaihtoehto ei toimintu, hylkää
+        //Jos yksikään vaihtoehto ei toiminut, hylkää
         return false;
         
     }

@@ -7,6 +7,7 @@ package ui;
 
 import domain.Translator;
 import java.util.Scanner;
+import testaus.Testaaja;
 
 /**
  *
@@ -28,6 +29,10 @@ public class Cli {
             
             if (syote.equals(".")) {
                 break;
+            } else if (syote.equals("testaa")) {
+                Testaaja testaaja = new Testaaja(t);
+                testaaja.testaa();
+                continue;
             }
             
             System.out.print("lauseke: ");
