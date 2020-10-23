@@ -81,7 +81,7 @@ public class Translator {
         }
         
         //Kun ei ole toistoa, käsitellään seuraavien sulkujen sisältö seuraavana:
-        ArrayList<Merkkijono> vaihtoehdot = new ArrayList();
+        Lista vaihtoehdot = new Lista();
         Merkkijono temp = new Merkkijono();
         int sulkuja = 0;
         
@@ -108,7 +108,9 @@ public class Translator {
         lauseke.poista(seuraava.length());
         
         //Kokeillaan vaihtoehdot vuorotellen
-        for (Merkkijono vaihtoehto: vaihtoehdot) {
+        for (int i = 0; i < vaihtoehdot.size(); i++) {
+            Merkkijono vaihtoehto = vaihtoehdot.get(i);
+            
             lauseke.lisaaAlkuun(vaihtoehto.kloonaa());
             
             //Jos jokin vaihtoehto toimii, palauta true
