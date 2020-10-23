@@ -7,9 +7,11 @@ Alla ohjelman luokka- ja pakkauskaavio. Kaavion ulkopuolelle on jätetty testaam
 
 Ohjelmassa on siis erittäin kevyt tekstikäyttöliittymä, joka käyttää luokkaa Translator tekstisyötteiden ja säännöllisten lausekkeiden vertaamiseen. Translator tarjoaa julkisen metodin "matches" joka saa syötteenä tekstisyötteen ja lausekkeen ja palauttaa tiedon siitä, kuuluuko tekstisyöte annetun säännöllisen lausekkeen kuvaamaan kieleen.
 
-Luokka Translator käyttää kahta tietorakennetta, Lista ja Merkkijono. Näiden nimet kertonevat tarpeeksi niiden tarkoituksista. Lista on toteutukseltaan suppea, ja se sisältää vain välttämättömät toiminnot. Se pohjautuu taulukkoon, jonka koko kaksinkertaistetaan aina kun se tulee täyteen. Sen sijaan Merkkijono tarjoaa kaikenlaista, myös ylimääräisiä metodeja jäänteinä aiemmasta Translator-luokan toteutuksesta. Sen toteutus on huono, sillä siinä tietoja säilyttävä taulukko kopioidaan uudestaan aina, kun merkkijonoon lisätään yksi merkki. Tämä pitäisi ehdottomasti muuttaa vastaavaan toimintatapaan kuin Lista, eli että taulukon koko tuplataan aina tarvittaessa. Tätä on kerran jo yritetty, mutta yritys epäonnistui Merkkijono-luokan huonolaatuisen koodin takia.
+Luokka Translator käyttää kahta tietorakennetta, Lista ja Merkkijono. Näiden nimet kertonevat tarpeeksi niiden tarkoituksista. Lista on toteutukseltaan suppea, ja se sisältää vain välttämättömät toiminnot. Se pohjautuu taulukkoon, jonka koko kaksinkertaistetaan aina kun se tulee täyteen. Samalla logiikalla toimii luokka Merkkijono, mutta se sisältää hieman enemmän ominaisuuksia.
 
 
 ## Aikavaativuus
 
-Kuten [testausdokumentista](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Testausdokumentti.md) käy ilmi
+Aikavaativuuden täsmällinen määritys ei onnistunut, mutta seuraavanlaisia havaintoja siitä selvisi:
+
+Syötteen pituuden osalta pahin mahdollinen tapaus on se, jossa jokainen merkki muodostuu yhden toistettavan lauseen seurauksena, kuten [tehokkuustestauksen](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Testausdokumentti.md) esimerkkilausekkeissa. Tällöin ohjelma joutuu käymään läpi kaikki toistomäärät nollasta syötteen pituuteen n. Tämä aiheuttaa rekursiivisen tarkasta-metodin suorituskertoja O(n^2) kappaletta. 
