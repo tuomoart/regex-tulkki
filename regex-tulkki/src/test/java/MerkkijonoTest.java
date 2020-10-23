@@ -81,13 +81,6 @@ public class MerkkijonoTest {
     }
     
     @Test
-    public void kopioiTest() {
-        Merkkijono m = new Merkkijono("abc");
-        m.kopioi(2);
-        assertEquals(5, m.getAll().length);
-    }
-    
-    @Test
     public void equalsTest() {
         Merkkijono m1 = new Merkkijono("abc");
         Merkkijono m2 = new Merkkijono("abc");
