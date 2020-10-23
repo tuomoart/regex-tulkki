@@ -13,21 +13,17 @@ import java.util.Arrays;
  */
 public class Merkkijono {
     private char[] merkit;
-    private int koko;
     
     public Merkkijono() {
-        this.merkit = new char[1];
-        koko = 0;
+        this.merkit = new char[0];
     }
     
     public Merkkijono(char[] merkit) {
         this.merkit = merkit;
-        koko = merkit.length;
     }
     
     public Merkkijono(String merkit) {
-        this.merkit = new char[1];
-        koko = 0;
+        this.merkit = new char[0];
         
         for (char c: merkit.toCharArray()) {
             lisaa(c);
@@ -36,16 +32,12 @@ public class Merkkijono {
     
     public Merkkijono(char c) {
         this.merkit = new char[] {c};
-        koko = 1;
     }
     
     public void lisaa(char m) {
-        if (this.taynna()) {
-            this.tuplaa();
-        }
+        kopioiVoid(1);
         
-        merkit[koko] = m;
-        koko++;
+        merkit[merkit.length - 1] = m;
     }
     
     public Merkkijono lisaaAlkuun(Merkkijono m) {
@@ -82,7 +74,6 @@ public class Merkkijono {
         }
         
         merkit = temp;
-        koko = koko - maara;
         
         return merkit;
     }
@@ -96,20 +87,10 @@ public class Merkkijono {
     }
     
     public char[] getAll() {
-        char[] temp = new char[koko];
-        
-        for (int i = 0; i < koko; i++) {
-            temp[i] = get(i);
-        }
-        
-        return temp;
+        return merkit;
     }
     
     public int length() {
-        return this.koko;
-    }
-    
-    public int taulukonPituus() {
         return this.merkit.length;
     }
     
@@ -121,14 +102,6 @@ public class Merkkijono {
         }
         
         return new Merkkijono(temp);
-    }
-    
-    public boolean taynna() {
-        return koko == merkit.length;
-    }
-    
-    public void tuplaa() {
-        kopioiVoid(merkit.length);
     }
 
     @Override

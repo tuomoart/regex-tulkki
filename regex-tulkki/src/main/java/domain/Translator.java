@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author tuomoart
@@ -31,9 +33,9 @@ public class Translator {
     private boolean tarkasta(Merkkijono syote, Merkkijono lauseke) {
         
         //Diagnostiikkaa varten printtejä
-        System.out.println("syote: " + syote.toString());
-        System.out.println("lauseke: " + lauseke.toString());
-        System.out.println("");
+//        System.out.println("syote: " + syote.toString());
+//        System.out.println("lauseke: " + lauseke.toString());
+//        System.out.println("");
         
         //Jos molemmat ovat loppuneet, syöte täsmää
         if (syote.length() == 0 && lauseke.length() == 0) {
