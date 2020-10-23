@@ -1,5 +1,7 @@
 package domain;
 
+import tietorakenteet.Lista;
+import tietorakenteet.Merkkijono;
 import java.util.ArrayList;
 
 /**

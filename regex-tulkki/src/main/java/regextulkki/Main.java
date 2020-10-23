@@ -1,6 +1,6 @@
 package regextulkki;
 
-import domain.Merkkijono;
+import tietorakenteet.Merkkijono;
 import domain.Translator;
 import java.util.Scanner;
 import ui.Cli;

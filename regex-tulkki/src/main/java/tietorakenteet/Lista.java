@@ -1,4 +1,6 @@
-package domain;
+package tietorakenteet;
+
+import tietorakenteet.Merkkijono;
 
 /**
  *

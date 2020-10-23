@@ -23,5 +23,3 @@ Ajat sekunteina
 Kuten nähdään, omalla toteutuksella ajankäyttö kasvaa selkeästi syötteen pituuden kasvaessa, kun taas Javan valmis toteutus kuluttaa likipitäen saman verran aikaa syötteen pituudesta riippumatta. Mitä luultavimmin Javan toteutus siis toimii enemmänkin kuin regex-kääntäjä kuin regex-tulkki. Oma toteutukseni on rekursiivinen ja sen laskentapuun syvyys riippuu pitkälti syötteen pituudesta, joten onkin odotettavissa, että ajankulutus kasvaa havaitulla tavalla.
 
 Kun verrataan oman toteutukseni suoritusta käytettyjen lausekkeiden kesken, voidaan nähdä myös lausekkeen merkitys ajankäyttöön. Koska ohjelma kohdatessaan vaihtoehtoja kokeilee niitä kaikkia, kuluu aikaa sitä enemmän, mitä enemmän vaihtoehtoja on.
-
-Lausekkeen operaatioista raskain on tai. Pahimmassa tapauksessa kaikki vaihtoehdot joudutaan avaamaan ja kokeilemaan yksitellen. Määritellään syötteen pituus n ja aakkoston koko m, ja että käytetään sellaista lauseketta, joka muodostaa tiettyyn pituuteen asti yhtä lukuunottamatta kaikki aakkoston merkkijonot, esim ((1(1|0))|01) 
