@@ -1,7 +1,6 @@
 package domain;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  *
@@ -15,13 +14,22 @@ public class Translator {
      * @return boolean
      */
     public boolean matches(String s, String l) {
+        //Siirrytään omaan tietorakenteeseen
         Merkkijono syoteChars = new Merkkijono(s);
         Merkkijono lausekeChars = new Merkkijono(l);
+        
+        //Formatoidaan lauseke sopivaksi
         lausekeChars = lisaaSulut(lausekeChars);
         
         return tarkasta(syoteChars, lausekeChars);
     }
     
+    /**
+     * Tarkasta sulkulause kerrallaan rekursiivisesti, vastaako syöte säännöllistä lauseketta
+     * @param syote
+     * @param lauseke
+     * @return 
+     */
     private boolean tarkasta(Merkkijono syote, Merkkijono lauseke) {
         
         //Diagnostiikkaa varten printtejä
@@ -117,6 +125,11 @@ public class Translator {
         
     }
     
+    /**
+     * Lisää kaikki turhat sulut siten, että konkatenaatiota tehdään vain sulkulauseille
+     * @param m 
+     * @return 
+     */
     private Merkkijono lisaaSulut(Merkkijono m) {
         Merkkijono temp = new Merkkijono();
         
@@ -133,6 +146,11 @@ public class Translator {
         return temp;
     }
     
+    /**
+     * Etsi seuraava sulkulause
+     * @param m Merkkijono josta etsitään
+     * @return 
+     */
     private Merkkijono seuraava(Merkkijono m) {
         Merkkijono temp = new Merkkijono();
         
