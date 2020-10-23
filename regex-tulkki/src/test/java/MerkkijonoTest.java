@@ -81,13 +81,6 @@ public class MerkkijonoTest {
     }
     
     @Test
-    public void kopioiTest() {
-        Merkkijono m = new Merkkijono("abc");
-        m.kopioi(2);
-        assertEquals(5, m.getAll().length);
-    }
-    
-    @Test
     public void equalsTest() {
         Merkkijono m1 = new Merkkijono("abc");
         Merkkijono m2 = new Merkkijono("abc");
@@ -107,5 +100,16 @@ public class MerkkijonoTest {
         Merkkijono m = new Merkkijono("");
         
         assertEquals(7, m.hashCode());
+    }
+    
+    @Test
+    public void lisaaPoistetunAlkuunTest() {
+        Merkkijono m1 = new Merkkijono("abc");
+        Merkkijono m2 = new Merkkijono("xyz");
+        
+        m2.poista1();
+        m2.lisaaAlkuun(m1);
+        
+        assertEquals("abcyz", m2.toString());
     }
 }
