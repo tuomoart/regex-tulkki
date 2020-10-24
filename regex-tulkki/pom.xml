@@ -28,6 +28,8 @@
                 <configuration>
                     <excludes>
                         <exclude>regextulkki/*</exclude>
+                        <exclude>testaus/*</exclude>
+                        <exclude>ui/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

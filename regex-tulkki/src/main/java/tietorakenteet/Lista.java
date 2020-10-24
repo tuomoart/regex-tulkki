@@ -1,7 +1,5 @@
 package tietorakenteet;
 
-import tietorakenteet.Merkkijono;
-
 /**
  *
  * @author tuomoart
@@ -15,7 +13,7 @@ public class Lista {
         koko = 0;
     }
     
-    public Integer size() {
+    public int size() {
         return koko;
     }
     
@@ -29,7 +27,7 @@ public class Lista {
     }
     
     public Merkkijono get(int i) {
-        if (i > koko) {
+        if (i >= koko) {
             return new Merkkijono();
         }
         

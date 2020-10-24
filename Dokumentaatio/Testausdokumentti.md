@@ -2,7 +2,11 @@
 
 ## Yksikkötestaus
 
-Ohjelma on yksikkötestattu kattavasti hyvin moninaisilla testiskenaarioilla. Ohjelmaa on sen luonteesta johtuen helppoa testata, ja testikattavuus onkin korkea.
+Ohjelma on yksikkötestattu kattavasti hyvin moninaisilla testiskenaarioilla. Ohjelmaa on sen luonteesta johtuen helppoa testata, ja testikattavuus onkin korkea, 100% rivikattavuus ja 98% haarautumakattavuus:
+
+
+
+Tehokkuustestaamiseen sekä käyttöliittymään liittyvä koodi on jätetty yksikkötestauksen ulkopuolelle.
 
 
 ## Tehokkuustestaus

@@ -9,7 +9,7 @@ Ohjelmassa on siis erittäin kevyt tekstikäyttöliittymä, joka käyttää luok
 
 Luokka Translator käyttää kahta tietorakennetta, Lista ja Merkkijono. Näiden nimet kertonevat tarpeeksi niiden tarkoituksista. Lista on toteutukseltaan suppea, ja se sisältää vain välttämättömät toiminnot. Se pohjautuu taulukkoon, jonka koko kaksinkertaistetaan aina kun se tulee täyteen. Samalla logiikalla toimii luokka Merkkijono, mutta se sisältää hieman enemmän ominaisuuksia.
 
-Ohjelman käyttöohje löytyy [täältä]()
+Ohjelman käyttöohje löytyy [täältä](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
 
 
 ## Aikavaativuus
@@ -33,3 +33,5 @@ Ohjelmaa olisi voinut kehittää eteenpäin ainakin seuraavilla tavoilla:
  - Lyhennysmerkintöjen tuki. Valtaosan lyhennysmerkinnöistä voisi tehdä tuetuksi syntaksinmuokkauksen kautta. Toisinsanoen jos annettu lauseke käyttää lyhennysmerkintöjä, avattaisiin nämä merkinnät ensin käyttämään tunnistusalgoritmin tuntemia perusoperaatioita ja vasta sitten annettaisiin tämä avattu lauseke tarkastettavaksi. Siis itse tarkastajan ei tarvitse, eikä todennäköisesti kannatakaan tukea kaikkia mahdollisia merkintätapoja.
  - Virheellisten syötteiden tutki
  - Erityismerkkien käyttö osana merkistöä, siis että esimerkiksi |-merkki voisi olla osa syötemerkkijono
+ - Merkkijono ja Lista -tietorakenteet olisi voinut toteuttaa yhden luokan pohjalle, mutta tähän ei enää ollut aikaa
+ - Nimeämiskäytännöt voisivat olla yhteneväisempiä, samaten käytetty kieli. Lista-rakenne noudattaa ArrayList-luokan nimentää ja on englanniksi, sillä Lista korvasi sen lähes suoraan.

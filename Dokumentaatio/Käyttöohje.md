@@ -15,4 +15,4 @@ Ohjelma osaa kaikki tavalliset kirjaimet sekä isoina, että pieninä. Erikoisme
   - |: tai
   - ( ja ): sulkeet
 
-Muita merkintöjä, kuten lyhennysmerkintöjä, ohjelma ei tunne.
+Muita merkintöjä, kuten lyhennysmerkintöjä, ohjelma ei tunne. Ohjelma EI tee minkäänlaisia tarkistuksia virheellisille syötteille; tämä on jätetty käyttäjän vastuulle.
