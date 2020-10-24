@@ -2,6 +2,7 @@
 
 Määrittelydokumenttia ei ole päivitetty projektin aloituksen jälkeen, eikä se vastaa lopputulosta. Kuvaus valmiista ohjelmasta löytyy [Toteutusdokumentista](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Toteutusdokumentti.md)
 
+---
 
 # Säännöllisten lausekkeiden tulkki
 
