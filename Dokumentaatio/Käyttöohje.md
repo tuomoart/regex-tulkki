@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Ohjelma on helpointa suorittaa jar-paketista, joka on ladattavissa [githubissa.] TODO Linkki
+Ohjelma on helpointa suorittaa jar-paketista, joka on ladattavissa [githubissa.](https://github.com/tuomoart/regex-tulkki/releases/tag/v1.0)
 
 Ohjelmassa on yksinkertainen komentorivikäyttöliittymä. Käynnistyksen jälkeen ohjelma kysyy testattavaa syötettä. Jos syötteeksi antaa "." -merkin, ohjelma sammuu. Jos syöte on "testaa", niin ohjelma suorittaa tehokkuusvertailun. Tehokkuusvertailu ei välttämättä toimi jar-pakettia ajaessa, ainakaan ilman, että testisyötteet on luotu.
 
