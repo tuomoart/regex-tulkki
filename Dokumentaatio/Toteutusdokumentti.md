@@ -21,9 +21,9 @@ Syötteen pituuden osalta pahin mahdollinen tapaus on se, jossa jokainen merkki 
 En ole onnistunut keksimään tätä vaikeampia tapauksia. Koska algoritmi ei käy kaikkia mahdollisia lausekkeen kuvaamia merkkijonoja loppuun asti ennen kuin se tarkastaa, tääsmääkö joku niistä syötteeseen, vaan se tarkastaa syötemerkkijonoa merkki kerrallaan, rajautuu suurin osa lausekkeen kuvaamaan kieleen kuuluvista merkkijonoista pois tarkastelusta.
 
 
-## Tehokkuus
+## Tehokkuus ja testaus
 
-Tehokkuutta on tutkittu tarkemmin [testausdokumentissa](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Testausdokumentti.md). Siinä on myös verrattu oman toteutuksen suorituskykyä Javan valmiiseen toteutukseen sekä analysoitu tulosten syitä.
+Tehokkuutta ja yksikkötestausta on tutkittu tarkemmin [testausdokumentissa](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Testausdokumentti.md). Siinä on myös verrattu oman toteutuksen suorituskykyä Javan valmiiseen toteutukseen sekä analysoitu tulosten syitä.
 
 
 ## Kehityskohteet
