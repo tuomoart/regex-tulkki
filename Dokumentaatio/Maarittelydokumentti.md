@@ -1,3 +1,8 @@
+## Loppupalautuksen huomio!
+
+Määrittelydokumenttia ei ole päivitetty projektin aloituksen jälkeen, eikä se vastaa lopputulosta. Kuvaus valmiista ohjelmasta löytyy [Toteutusdokumentista](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Toteutusdokumentti.md)
+
+
 # Säännöllisten lausekkeiden tulkki
 
 Tarkoituksena on toteuttaa ohjelma, joka osaa lukea merkkijonoista koostuvan syötteen esimerkiksi tiedostosta ja suorittaa syötteelle annettu säännöllinen lauseke. Ohjelmointikielenä tulee olemaan Java ja projektin kielenä Suomi. Opiskelen fysikaalisten tieteiden kandiohjelmassa. Valitsin tämän aiheen, sillä se on oiva tapa perehtyä kunnolla säännöllisten lausekkeiden käyttöön.
