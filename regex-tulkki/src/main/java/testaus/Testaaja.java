@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Luokka jätetty kommentoinnin ulkopuolelle, sillä se ei ole osa varsinaista ohjelmaa.
+ * Luokka jätetty kommentoinnin ulkopuolelle, sillä se ei ole osa varsinaista ohjelmaa. Käyttää valmiita tietorakenteita samasta syystä.
  * @author tuomoart
  */
 public class Testaaja {

@@ -22,6 +22,9 @@ public class Cli {
         this.t = t;
     }
     
+    /**
+     * Suorittaa käyttöliittymää silmukassa, kunnes annetaan syötteenä "."
+     */
     public void kaynnista() {
         while (true) {
             System.out.print("Syöte (. lopettaa): ");

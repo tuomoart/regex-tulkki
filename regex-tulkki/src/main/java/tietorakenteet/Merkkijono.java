@@ -5,10 +5,8 @@
  */
 package tietorakenteet;
 
-import java.util.Arrays;
-
 /**
- *
+ * Luokka merkkijonojen käsittelyyn
  * @author tuomoart
  */
 public class Merkkijono {
@@ -16,29 +14,49 @@ public class Merkkijono {
     private int alku = 0;
     private int koko;
     
+    /**
+     * Luo uusi tyhjä Merkkijono
+     */
     public Merkkijono() {
         this.merkit = new char[1];
         this.koko = 0;
     }
     
+    /**
+     * Luo uusi Merkkijono, jossa on yksi merkki
+     * @param c lisättävä merkki
+     */
     public Merkkijono(char c) {
         this.merkit = new char[] {c};
         this.koko = 1;
     }
     
+    /**
+     * Uusi Merkkijono merkkitaulukosta
+     * @param c taulukko, joka sisältää merkkejä
+     */
     public Merkkijono(char[] c) {
         this.merkit = c;
         this.koko = c.length;
     }
     
+    
+    /**
+     * Uusi Merkkijono String-merkkijonosta. Käytetään vain alussa kun siirrytään käyttämään omaa tietorakennetta.
+     * @param s String-merkkijono
+     */
     public Merkkijono(String s) {
         this();
         
-        for (char c: s.toCharArray()) {
-            lisaa(c);
+        for (int i = 0; i < s.length(); i++) {
+            lisaa(s.charAt(i));
         }
     }
     
+    /**
+     *  Lisää merkki Merkkijonon loppuun
+     * @param c lisättävä merkki
+     */
     public void lisaa (char c) {
         if (taynna()) {
             tuplaa();
@@ -48,6 +66,10 @@ public class Merkkijono {
         koko++;
     }
     
+    /**
+     * Lisää toinen Merkkijono tämän Merkkijonon alkuun
+     * @param m lisättävä Merkkijono
+     */
     public void lisaaAlkuun(Merkkijono m) {
         for (char c : this.getAll()) {
             m.lisaa(c);
@@ -58,18 +80,34 @@ public class Merkkijono {
         koko = this.merkit.length;
     }
     
+    /**
+     * Poista Merkkijonon alusta merkkejä
+     * @param maara poistettavien merkkien määrä
+     */
     public void poista(int maara) {
         this.alku += maara;
     }
     
+    /**
+     * Poista yksi merkki alusta
+     */
     public void poista1() {
         poista(1);
     }
     
+    /**
+     * Nouda merkki indeksillä
+     * @param i indeksi
+     * @return merkki kohdassa i
+     */
     public char get(int i) {
         return this.merkit[alku + i];
     }
     
+    /**
+     * Nouda kaikki Merkkijonon merkit merkkitaulukkona
+     * @return kaikki merkit taulukkona
+     */
     public char[] getAll() {
         char[] temp = new char[this.length()];
         
@@ -80,18 +118,28 @@ public class Merkkijono {
         return temp;
     }
     
+    /**
+     * Merkkijonon pituus
+     * @return pituus
+     */
     public int length() {
         return this.koko - this.alku;
     }
     
+    /**
+     * Luo erillinen kopio
+     * @return uusi Merkkijono-olio samalla sisällöllä
+     */
     public Merkkijono kloonaa() {
         return new Merkkijono(this.getAll());
     }
     
+    //Tarkasta, onko taulukko täynnä, jotta tiedetään kasvattaa sitä tarvittaessa
     private boolean taynna() {
         return this.koko == this.merkit.length;
     }
     
+    //Tuplaa taulukon koko
     private void tuplaa() {
         char[] temp = new char[this.merkit.length * 2];
         
@@ -102,6 +150,10 @@ public class Merkkijono {
         this.merkit = temp;
     }
     
+    /**
+     * Tarpeeton, luotu IDE:n herjojen poistamiseksi equals-metodin käyttöä varten.
+     * @return 
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -120,9 +172,17 @@ public class Merkkijono {
             return false;
         }
         final Merkkijono other = (Merkkijono) obj;
-        if (!Arrays.equals(this.merkit, other.merkit)) {
+        
+        if (this.merkit.length != other.merkit.length) {
             return false;
         }
+        
+        for (int i = 0; i < this.merkit.length; i++) {
+            if (this.merkit[i] != other.merkit[i]) {
+                return false;
+            }
+        }
+        
         return true;
     }
 
