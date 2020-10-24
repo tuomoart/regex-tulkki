@@ -34,6 +34,11 @@ public class TranslatorTest {
     }
     
     @Test
+    public void emptyTest() {
+        assertEquals(true, t.matches("", ""));
+    }
+    
+    @Test
     public void singleCharacterTest1() {
         assertEquals(true, t.matches("a", "a"));
     }
