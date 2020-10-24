@@ -4,7 +4,7 @@
 
 Ohjelma on yksikkötestattu kattavasti hyvin moninaisilla testiskenaarioilla. Ohjelmaa on sen luonteesta johtuen helppoa testata, ja testikattavuus onkin korkea, 100% rivikattavuus ja 98% haarautumakattavuus:
 
-
+[](https://raw.githubusercontent.com/tuomoart/regex-tulkki/master/Dokumentaatio/Misc/Testikattavuus_final.png)
 
 Tehokkuustestaamiseen sekä käyttöliittymään liittyvä koodi on jätetty yksikkötestauksen ulkopuolelle.
 
