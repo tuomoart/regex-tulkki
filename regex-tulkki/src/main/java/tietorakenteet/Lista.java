@@ -52,7 +52,7 @@ public class Lista {
     
     //Tuplaa listan koko
     private void tuplaa() {
-        Merkkijono[] temp = new Merkkijono[lista.length*2];
+        Merkkijono[] temp = new Merkkijono[lista.length * 2];
         
         for (int i = 0; i < lista.length; i++) {
             temp[i] = lista[i];

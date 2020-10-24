@@ -51,7 +51,7 @@ public class Translator {
         //Jos molempien seuraava merkki on sama, niin tämä merkki voidaan hyväksyä ja unohtaa
         if (!onErikoismerkki(lauseke.get(0))) {
             //Jos syöte on loppunut tai sen seuraava merkki on eri kuin lausekkeen, hylkää
-            if(syote.length() == 0 || syote.get(0) != lauseke.get(0)) {
+            if (syote.length() == 0 || syote.get(0) != lauseke.get(0)) {
                 return false;
             }
             
@@ -65,7 +65,7 @@ public class Translator {
         Merkkijono seuraava = seuraava(lauseke);
         
         //Jos lausekkeen seuraava operaatio on toisto:
-        if (lauseke.length()>seuraava.length() && lauseke.get(seuraava.length()) == '*') {
+        if (lauseke.length() > seuraava.length() && lauseke.get(seuraava.length()) == '*') {
             boolean tasmaa = false;
             
             //Poistetaan lausekkeesta toisto:
@@ -73,7 +73,7 @@ public class Translator {
             
             //yritetään joka kerta kasvavaa määrää toistettavaa lauseketta
             //kunnes löytyy määrä joka toimii. (Lopetetaan kun toistoja enemmän kuin syötteen pituus.)
-            for (int i = 0; !tasmaa && i<syote.length()+1; i++) {
+            for (int i = 0; !tasmaa && i < syote.length() + 1; i++) {
                 tasmaa = tarkasta(syote.kloonaa(), lauseke.kloonaa());
                 lauseke.lisaaAlkuun(seuraava.kloonaa());
             }
@@ -87,12 +87,16 @@ public class Translator {
         int sulkuja = 0;
         
         //Käydään sulkulause läpi ja paloitellaan se erillisiin osiin:
-        for (int i = 1; i< seuraava.length()-1; i++) {
+        for (int i = 1; i < seuraava.length() - 1; i++) {
             char c = seuraava.get(i);
             
             //Seurataan sulkuja
-            if (c == '(') {sulkuja++;}
-            if (c == ')') {sulkuja--;}
+            if (c == '(') {
+                sulkuja++;
+            }
+            if (c == ')') {
+                sulkuja--;
+            }
             
             //Tai-merkin kohdalla aloitetaan uusi osa jos se ei ole avointen sulkujen sisällä
             if (c == '|' && sulkuja == 0) {

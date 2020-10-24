@@ -35,14 +35,16 @@ public class Testaaja {
         
         for (int i = 1; i <= testit.size(); i++) {
             long aika1 = System.nanoTime();
-            String rgx = testit.get(i-1);
+            String rgx = testit.get(i - 1);
             
             try (Scanner tiedostonLukija = new Scanner(Paths.get(i + ".txt"))) {
                 
                 while (tiedostonLukija.hasNextLine()) {
                     String rivi = tiedostonLukija.nextLine();
                     
-                    if (rivi.isEmpty()) {continue;}
+                    if (rivi.isEmpty()) {
+                        continue;
+                    }
                     
                     if (!tulkki.matches(rivi, rgx)) {
                         System.out.println("Virhe!");
@@ -54,25 +56,27 @@ public class Testaaja {
             }
             
             aika1 = System.nanoTime() - aika1;
-            aikaOmaYht+=aika1;
-            System.out.println("Omalla toteutuksella kesti " + aika1/10e9 + " sekuntia testissä " + i);
+            aikaOmaYht += aika1;
+            System.out.println("Omalla toteutuksella kesti " + aika1 / 10e9 + " sekuntia testissä " + i);
         }
         
         System.out.println("");
         
         for (int i = 1; i <= testit.size(); i++) {
             long aika2 = System.nanoTime();
-            Pattern pattern = Pattern.compile(testit.get(i-1));
+            Pattern pattern = Pattern.compile(testit.get(i - 1));
             
             try (Scanner tiedostonLukija = new Scanner(Paths.get(i + ".txt"))) {
                 
                 while (tiedostonLukija.hasNextLine()) {
                     String rivi = tiedostonLukija.nextLine();
                     
-                    if (rivi.isEmpty()) {continue;}
+                    if (rivi.isEmpty()) {
+                        continue;
+                    }
                     
                     Matcher matcher = pattern.matcher(rivi);
-                    if(!matcher.matches()) {
+                    if (!matcher.matches()) {
                         System.out.println("Virhe!");
                         break;
                     }
@@ -83,12 +87,12 @@ public class Testaaja {
             
             aika2 = System.nanoTime() - aika2;
             aikaJavaYht += aika2;
-            System.out.println("Javan toteutuksella kesti  " + aika2/10e9 + " sekuntia testissä " + i);
+            System.out.println("Javan toteutuksella kesti  " + aika2 / 10e9 + " sekuntia testissä " + i);
         }
         
         System.out.println("");
-        System.out.println("Omalla toteutuksella kesti yhteensä " + aikaOmaYht/10e9 + " sekuntia");
-        System.out.println("Javan toteutuksella kesti yhteensä  " + aikaJavaYht/10e9 + " sekuntia");
+        System.out.println("Omalla toteutuksella kesti yhteensä " + aikaOmaYht / 10e9 + " sekuntia");
+        System.out.println("Javan toteutuksella kesti yhteensä  " + aikaJavaYht / 10e9 + " sekuntia");
         System.out.println("\n");
     }
 }

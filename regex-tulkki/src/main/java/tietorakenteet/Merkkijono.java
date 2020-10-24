@@ -57,7 +57,7 @@ public class Merkkijono {
      *  Lisää merkki Merkkijonon loppuun
      * @param c lisättävä merkki
      */
-    public void lisaa (char c) {
+    public void lisaa(char c) {
         if (taynna()) {
             tuplaa();
         }
@@ -173,12 +173,17 @@ public class Merkkijono {
         }
         final Merkkijono other = (Merkkijono) obj;
         
-        if (this.merkit.length != other.merkit.length) {
+        return samaTaulu(this.merkit, other.merkit);
+    }
+    
+    //Paloiteltu equals-metodia
+    private boolean samaTaulu(char[] eka, char[] toka) {
+        if (eka.length != toka.length) {
             return false;
         }
         
-        for (int i = 0; i < this.merkit.length; i++) {
-            if (this.merkit[i] != other.merkit[i]) {
+        for (int i = 0; i < eka.length; i++) {
+            if (eka[i] != toka[i]) {
                 return false;
             }
         }

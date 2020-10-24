@@ -35,3 +35,4 @@ Ohjelmaa olisi voinut kehittää eteenpäin ainakin seuraavilla tavoilla:
  - Erityismerkkien käyttö osana merkistöä, siis että esimerkiksi |-merkki voisi olla osa syötemerkkijono
  - Merkkijono ja Lista -tietorakenteet olisi voinut toteuttaa yhden luokan pohjalle, mutta tähän ei enää ollut aikaa
  - Nimeämiskäytännöt voisivat olla yhteneväisempiä, samaten käytetty kieli. Lista-rakenne noudattaa ArrayList-luokan nimentää ja on englanniksi, sillä Lista korvasi sen lähes suoraan.
+ - Translator-luokan metodi on turhan pitkä. Toisaalta sen pätkiminen voisi tehdä ohjelmasta vaikeaselkoisemman.
