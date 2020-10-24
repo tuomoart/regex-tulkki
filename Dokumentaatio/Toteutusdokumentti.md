@@ -36,3 +36,9 @@ Ohjelmaa olisi voinut kehittää eteenpäin ainakin seuraavilla tavoilla:
  - Merkkijono ja Lista -tietorakenteet olisi voinut toteuttaa yhden luokan pohjalle, mutta tähän ei enää ollut aikaa
  - Nimeämiskäytännöt voisivat olla yhteneväisempiä, samaten käytetty kieli. Lista-rakenne noudattaa ArrayList-luokan nimentää ja on englanniksi, sillä Lista korvasi sen lähes suoraan.
  - Translator-luokan metodi on turhan pitkä. Toisaalta sen pätkiminen voisi tehdä ohjelmasta vaikeaselkoisemman.
+ - Merkkijono-olioita kloonataan eri vaihtoehtojen kokeilemisen mahdollistamiseksi. Nykyinen tapa kloonata ei välttämättä ole optimaalinen ja toisaalta on mahdollista, että koko kloonaamiselta olisi voinut välttyä. Tätä olisi ajan salliessa voinut tutkia enemmän.
+
+
+## Tekijältä
+
+Toimivaan ratkaisuun pääseminen oli yllättävän vaikeaa ja toimiva lopullinen algoritmi syntyikin vasta viimeisellä viikolla. Alusta joutui aloittamaan kolme kertaa. Lopputuloksena syntynyt algoritmi ja sitä kautta koko harjoitustyö on sen verran yksinkertainen, että hirvittää, riittääkö se laajuudeltaan. Toisaalta, kuten ohjaaja (Hannu) projektin alussa sanoi, tähän ei tarvita laajaa implementaatiota, sillä mallia tulkille ei löydy, toisin kun regex-kääntäjään. Jos aika olisi riittänyt, olisin halunnut vielä lisätä ainakin yhden lyhennysmerkinnän tuen proof-of-concept -tarkoituksella.

@@ -22,6 +22,7 @@ Ajat sekunteina
 |100             |0.01            |0.11            |0.00006           |0.00005 |
 |250             |0.099           |1.77            |0.00005           |0.00004 |
 |500            |0.74             |14.8           |0.00006            |0.00007 |
+|1000           |7.7              |107            |0.00023            |0.00008 |
 
 Kuten nähdään, omalla toteutuksella ajankäyttö kasvaa selkeästi syötteen pituuden kasvaessa, kun taas Javan valmis toteutus kuluttaa likipitäen saman verran aikaa syötteen pituudesta riippumatta. Mitä luultavimmin Javan toteutus siis toimii enemmänkin kuin regex-kääntäjä kuin regex-tulkki. Oma toteutukseni on rekursiivinen ja sen laskentapuun syvyys riippuu pitkälti syötteen pituudesta, joten onkin odotettavissa, että ajankulutus kasvaa havaitulla tavalla.
 
