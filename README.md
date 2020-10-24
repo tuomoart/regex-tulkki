@@ -5,13 +5,14 @@ Helsingin yliopiston Tietorakenteiden ja algoritmien harjoitustyökurssilla teht
 
 
 ### Dokumentaatio
-[Määrittelydokumentti](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Maarittelydokumentti.md)
 
 [Toteutusdokumentti](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Toteutusdokumentti.md)
 
 [Testausdokumentti](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Testausdokumentti.md)
 
 [Käyttöohje](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
+
+[Määrittelydokumentti](https://github.com/tuomoart/regex-tulkki/blob/master/Dokumentaatio/Maarittelydokumentti.md)
 
 
 #### Viikkoraportit
